@@ -1,0 +1,17 @@
+{
+  "name": "shashank188.github.io",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "canvas-sketch": "^0.7.7",
+    "canvas-sketch-cli": "^1.11.21",
+    "canvas-sketch-util": "^1.10.0",
+    "nice-color-palettes": "^3.0.0"
+  }
+}
