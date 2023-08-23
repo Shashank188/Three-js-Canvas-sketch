@@ -13,5 +13,8 @@
     "canvas-sketch-cli": "^1.11.21",
     "canvas-sketch-util": "^1.10.0",
     "nice-color-palettes": "^3.0.0"
+  },
+  "dependencies": {
+    "three": "^0.147.0"
   }
 }
