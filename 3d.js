@@ -2,11 +2,15 @@
 global.THREE = require("three");
 const canvasSketch = require("canvas-sketch");
 const random = require("canvas-sketch-util/random");
-const palettes = require('nice-color-palettes');
+const palettes = require("nice-color-palettes");
+const eases = require("eases");
 // Include any additional ThreeJS examples below
 require("three/examples/js/controls/OrbitControls");
 
 const settings = {
+  dimension: [512, 512],
+  fps: 24,
+  duration: 4,
   // Make the loop animated
   animate: true,
   // Get a WebGL canvas rather than 2D
@@ -44,7 +48,7 @@ const sketch = ({ context }) => {
   });
 
   const box = new THREE.BoxGeometry(1, 1, 1, 1);
-  const palette = random.pick(palettes)
+  const palette = random.pick(palettes);
   // Setup a mesh with geometry + material
   for (let i = 0; i < 50; i++) {
     const mesh = new THREE.Mesh(
@@ -76,10 +80,10 @@ const sketch = ({ context }) => {
 
   // draw each frame
 
-  scene.add(new THREE.AmbientLight('hsl(0,0%,40%)'));
+  scene.add(new THREE.AmbientLight("hsl(0,0%,40%)"));
 
-  const light = new THREE.DirectionalLight('white', 1);
-  light.position.set(0,0,4)
+  const light = new THREE.DirectionalLight("white", 1);
+  light.position.set(0, 0, 4);
   scene.add(light);
 
   return {
@@ -111,8 +115,9 @@ const sketch = ({ context }) => {
       camera.updateProjectionMatrix();
     },
     // Update & render your scene here
-    render({ time }) {
-      // mesh.rotation.y = time * ((10 * Math.PI) / 100);
+    render({ playhead }) {
+      const sinfun = Math.sin(playhead * Math.PI);
+      scene.rotation.z = eases.expoInOut(sinfun);
       // controls.update();
       renderer.render(scene, camera);
     },

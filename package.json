@@ -15,6 +15,9 @@
     "nice-color-palettes": "^3.0.0"
   },
   "dependencies": {
+    "eases": "^1.0.8",
+    "glsl-hsl2rgb": "^1.1.0",
+    "glsl-noise": "^0.0.0",
     "three": "^0.147.0"
   }
 }
