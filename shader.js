@@ -30,7 +30,7 @@ const frag = glsl(/* glsl */ `
 
     // vec3 color = mix(colorA, colorB, vec3(vUv.x));
 
-    float n = noise(vec3(center * 1.0, time * 1.25));
+    float n = noise(vec3(center * 1.0, time * 2.25));
 
     vec3 color = hsl2rgb(
       0.6 + n * 0.5,
